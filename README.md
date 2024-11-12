@@ -1,2 +1,2 @@
-# squatch-ui
+# SquatchUI
 SquatchUI - React Component Library
