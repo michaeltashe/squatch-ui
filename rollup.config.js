@@ -11,11 +11,21 @@ export default [
         file: 'dist/index.js',
         format: 'cjs',
         sourcemap: true,
+        globals: {
+          'react': 'React',
+          'react-dom': 'ReactDOM',
+          'react/jsx-runtime': 'ReactJsxRuntime',
+        },
       },
       {
         file: 'dist/index.esm.js',
         format: 'esm',
         sourcemap: true,
+        globals: {
+          'react': 'React',
+          'react-dom': 'ReactDOM',
+          'react/jsx-runtime': 'ReactJsxRuntime',
+        },
       },
     ],
     plugins: [
@@ -23,7 +33,7 @@ export default [
       commonjs(),
       typescript({ tsconfig: './tsconfig.json' }),
     ],
-    external: ['react', 'react-dom'],
+    external: ['react', 'react-dom', 'react/jsx-runtime'],
   },
   {
     input: 'dist/index.d.ts',
